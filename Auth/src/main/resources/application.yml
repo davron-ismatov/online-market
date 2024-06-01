@@ -1,0 +1,56 @@
+spring:
+  application:
+    name : Auth
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/second
+    username: postgres
+    password: 1234asdf
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cache:
+      type:redis
+  data:
+        redis:
+          host: localhost
+          port: 6379
+  mail:
+        default-encoding: UTF-8
+        host: smtp.gmail.com
+        port: 587
+        username: davronismato591@gmail.com
+        password: hefehumqrtebxvci
+        protocol: smtp
+        test-connection: false
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+
+  servlet:
+        multipart:
+          max-file-size: 3MB
+          max-request-size: 3MB
+
+app:
+      jwt:
+        secret-key:
+          access-token: "adfsdf0g9uf0j4va9j9124knejdsfsfdgh"
+          refresh-token: "vampfgja09gipsgjmowimwpaigmp2o3kmdbs"
+        expiration:
+          access-token: 180000
+          refresh-token: 360000
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
